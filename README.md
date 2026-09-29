@@ -1,210 +1,284 @@
-# Ellipses — Generative Art
+# Enigma Sudoku
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge)](https://reyrove.github.io/Ellipses-Generative-Art)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+**A seed-based generative system for playable Sudoku compositions.**
 
-> **Generative ellipse art.** Each refresh creates a unique composition of rotating ellipses with vibrant colors, soft shadows, and elegant geometric patterns.
-
-## 🎨 Live Demo
-
-<div align="center">
-  <a href="https://reyrove.github.io/Ellipses-Generative-Art" target="_blank">
-    <img src="demo-screenshot.jpg" alt="Ellipses Website Demo" width="800" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);"/>
-  </a>
-  <br><br>
-  <a href="https://reyrove.github.io/Ellipses-Generative-Art" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_View_Live_Demo-0a0a0a?style=for-the-badge&logo=githubpages&logoColor=white&color=c9a84c" alt="View Live Demo" width="300"/>
-  </a>
-  <br>
-  <em>Click the image or button to experience the generative art</em>
-</div>
-
-## 👕 Apparel Preview
-
-<div align="center">
-  <img src="Ellipses.jpg" alt="Ellipses on T-Shirt" width="600" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);"/>
-  <br>
-  <em>Ellipses artwork printed on a T-shirt</em>
-</div>
-
-## ✨ Features
-
-- **Rotating Ellipses** — Beautiful rotating ellipse patterns
-- **Two Layer System** — Big and small ellipses in different colors
-- **Rich Color Palettes** — 12 background, 12 foreground colors
-- **Soft Glow Effect** — Elegant shadow blur on ellipses
-- **Geometric Harmony** — Symmetrical, rotating compositions
-- **Seed-Based** — Every composition is unique and reproducible via its seed
-- **Save & Share** — Download as PNG with seed in filename
-- **Apparel Mode** — Preview artwork on a T-shirt mockup
-- **Responsive** — Works on desktop, tablet, and mobile
-- **Pure JavaScript** — No external dependencies
-- **Keyboard Shortcuts**:
-  - `R` — Regenerate
-  - `S` — Save image
-  - `T` — Toggle apparel view
-
-## 🎨 Artwork Details
-
-| Parameter | Range | Description |
-|-----------|-------|-------------|
-| **Big Ellipses** | 2–30 | Large outer ellipses |
-| **Small Ellipses** | 2–20 | Small inner ellipses |
-| **Background Colors** | 12 options | Soft pastel backgrounds |
-| **Big Ellipse Colors** | 12 options | Dark, rich colors |
-| **Small Ellipse Colors** | 12 options | Bright, vibrant colors |
-| **Shadow Blur** | Variable | Soft glow effect |
-
-## 🎯 How It Works
-
-The artwork creates a layered composition of rotating ellipses:
-
-1. **Setup**:
-   - Random background color from 12 soft colors
-   - Random big ellipse color from 12 dark colors
-   - Random small ellipse color from 12 bright colors
-   - Random number of big and small ellipses
-
-2. **Small Ellipses** (Inner Layer):
-   - Centered on canvas
-   - Rotating around their center
-   - Smaller size and line width
-   - Bright, vibrant colors
-
-3. **Big Ellipses** (Outer Layer):
-   - Centered on canvas with 45° rotation
-   - Rotating around their center
-   - Larger size and line width
-   - Dark, rich colors
-
-4. **Rendering**:
-   - Soft shadow glow on all ellipses
-   - Elegant geometric composition
-   - Symmetrical rotating patterns
-
-## 🚀 Quick Start
-
-### Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/reyrove/Ellipses-Generative-Art.git
-
-# Navigate to the directory
-cd Ellipses-Generative-Art
-
-# Open in browser
-open index.html
-# or use a live server
-```
-
-### Deploy to GitHub Pages
-
-1. Push to GitHub
-2. Go to Settings → Pages
-3. Select branch `main` and root folder
-4. Your site will be live at `https://reyrove.github.io/Ellipses-Generative-Art`
-
-## 🧠 How It Works
-
-The artwork is generated using a deterministic random number generator, seeded by timestamp + random noise. Every refresh:
-
-1. **Setup**:
-   - Random background from 12 pastel colors
-   - Random big ellipse color from 12 dark colors
-   - Random small ellipse color from 12 bright colors
-   - Random count of big ellipses (2-30)
-   - Random count of small ellipses (2-20)
-
-2. **Size Calculation**:
-   - Big ellipse width: random between w/4 and w/4 + w/8
-   - Small ellipse width: random between bigWidth/4 and bigWidth/4 + bigWidth/2
-   - Heights are half the width (2:1 ratio)
-
-3. **Rendering**:
-   - Small ellipses drawn first (inner layer)
-   - Big ellipses drawn second (outer layer)
-   - Each ellipse rotates by a fraction of PI
-   - Soft shadow blur creates glow effect
-
-## 📁 File Structure
-
-```
-Ellipses-Generative-Art/
-├── index.html          # Main application (all-in-one)
-├── Ellipses.jpg        # T-shirt mockup image
-├── fav.svg             # Favicon
-├── demo-screenshot.jpg # Website demo screenshot
-├── README.md           # This file
-└── LICENSE             # MIT License
-```
-
-## 🛠️ Tech Stack
-
-- **Pure Vanilla HTML/CSS/JS** — No dependencies
-- **Canvas API** — 2D rendering
-- **CSS Flexbox/Grid** — Responsive layout
-- **GitHub Pages** — Hosting
-
-## 🎯 Interactive Controls
-
-| Action | Keyboard | Button |
-|--------|----------|--------|
-| Regenerate | `R` | Click "regenerate" |
-| Save Image | `S` | Click "regenerate" |
-| Toggle Apparel | `T` | Click "apparel" |
-
-## 🎨 The Creative Process
-
-### Color Palettes
-- **Background**: 12 soft pastel colors (pink, peach, yellow, lavender, green, cyan, etc.)
-- **Big Ellipses**: 12 dark, rich colors (dark red, indigo, teal, maroon, purple, etc.)
-- **Small Ellipses**: 12 bright, vibrant colors (yellow, magenta, cyan, gold, etc.)
-
-### Ellipse Geometry
-Each ellipse has a 2:1 width-to-height ratio, creating elegant oval shapes. The rotation creates a mandala-like pattern.
-
-### Layer System
-- **Inner Layer**: Small ellipses create intricate patterns
-- **Outer Layer**: Big ellipses frame the composition
-- **Combined**: Creates depth and visual interest
-
-### Glow Effect
-A soft shadow blur adds a gentle glow to each ellipse, enhancing the dreamy, elegant feel of the artwork.
-
-## 📱 Responsive Design
-
-The application automatically adapts to:
-- Desktop screens
-- Tablets
-- Mobile phones
-- Landscape orientation
-- Various aspect ratios
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Fork the repository
-- Create a feature branch
-- Submit a pull request
-
-### Ideas for Contributions:
-- New color palettes
-- Additional ellipse patterns
-- Animation features
-- Interactive controls
-- Performance optimizations
-
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by geometric art and mandalas
-- Pure JavaScript implementation
-- Special thanks to the creative coding community
+A catalogue of computational textile compositions for fashion, textile and surface design — algorithmically drawn, seed-documented, and ready for production.
 
 ---
 
-**Built with ❤️ and elegant ellipses**
+## Overview
+
+Enigma Sudoku is a generative design system rather than a single artwork. Each composition is a playable Sudoku board — a 9×9 grid generated by recursive backtracking, stripped of 40 cells to create the puzzle. The plate is live: you can click to select a cell, choose a number, and solve the puzzle on the canvas itself.
+
+The system is designed for:
+
+- **Fashion houses** adapting puzzle-grid ornament for apparel and accessories
+- **Textile studios** developing repeat patterns and yardage
+- **Surface designers** working across print, wallpaper, and interior applications
+
+Every composition can be licensed, adapted, or commissioned to a brief.
+
+---
+
+## Concept
+
+A puzzle, when it is *generated* rather than posed, becomes a textile — playable, structural, quietly yours.
+
+The logic puzzle — rule-bound, symmetrical, endlessly re-playable — has always carried the structure of ornament. From the geometric grids of Persian tilework to the numbered squares of a Sudoku, the solved grid is a small architecture of constraint. Enigma Sudoku translates that structure into code. Each composition begins with an empty grid and unfolds through recursive backtracking, filling every cell according to the classic Sudoku rule, then strips 40 of them away to leave a puzzle.
+
+The puzzle layout, the missing cells, and the seed are all derived from a single numeric value.
+
+Unlike the other still volumes in this series, **Enigma Sudoku is interactive.** The plate is playable. But the framed plate, the surfaces, and the archive thumbnails are all static frames — they represent the initial, print-ready puzzle.
+
+---
+
+## Features
+
+- **Seed-based generation** — every puzzle is defined by a numeric seed and can be regenerated exactly
+- **Deterministic output** — the same seed always produces the same puzzle and the same missing cells
+- **Recursive backtracking** — the classic Sudoku solver, used to generate a full valid board
+- **40 cells removed** — leaving a playable puzzle of 41 clues
+- **Interactive plate** — click any cell, then choose a number or press 1–9 to fill it
+- **Valid / invalid feedback** — correct entries lock in place; incorrect entries show in red
+- **Row, column, and number highlight** — the selected row, column, and all cells matching the current number are highlighted
+- **Number selection row** — a row of 9 numbered buttons below the grid for quick number choice
+- **Adaptive surfaces** — one seed applied across print, scarf, textile, and wall formats
+- **Archive** — eight curated puzzles available for immediate loading
+- **Download** — export the current puzzle as a high-resolution PNG
+- **Keyboard shortcuts** — `R` for new puzzle, `S` to save, `1`–`9` to select a number
+
+---
+
+## Project Structure
+
+```
+.
+├── index.html          # Main catalogue page
+├── images/
+│   ├── fav.svg         # Favicon
+│   ├── tote.png        # Mockup: tote bag
+│   ├── tee.png         # Mockup: t-shirt
+│   └── cushion.png     # Mockup: cushion
+└── README.md
+```
+
+---
+
+## How It Works
+
+### The Seed
+
+A numeric seed (a large integer) initializes a deterministic pseudo-random generator. From this seed, the system derives:
+
+- The order in which cells are tested during backtracking
+- The order in which candidate numbers are tried
+- The 40 cells that are removed to form the puzzle
+
+Because the generator is deterministic, the same seed always produces the same puzzle — on any device, at any time.
+
+### The Generation
+
+Each puzzle is generated in two phases:
+
+**Phase 1 — Fill the grid.** Starting from an empty 9×9 grid, the system runs a recursive backtracking algorithm:
+
+1. Find the first empty cell.
+2. Shuffle the numbers 1–9.
+3. Try each number in turn, checking whether it violates the Sudoku constraint (no repeat in the row, column, or 3×3 box).
+4. If a number works, place it and recurse.
+5. If no number works, backtrack and try the next candidate.
+
+When the recursion completes, every cell is filled and the board satisfies all Sudoku constraints.
+
+**Phase 2 — Remove 40 cells.** Once the full board is solved, the system randomly selects 40 cells and sets them back to zero. These 40 cells are the puzzle's unknowns; the remaining 41 are its clues.
+
+The result is a **valid Sudoku** — it has exactly one solution (the original full board), and it can be solved by logic.
+
+### The Player
+
+The plate is interactive:
+
+- **Click a cell** — selects it. The row, column, and all matching numbers highlight.
+- **Click a number button** (the row of 9 boxes below the grid) — sets the current selection.
+- **Press 1–9** — same as clicking a number button.
+- **Click a cell with a valid number already in it** — the entry **locks** (it becomes part of the solved board).
+- **Click a cell with an invalid number** — the entry turns **red**.
+- **Click an invalid cell again** — the entry is **cleared**, and you can try again.
+
+The grid is divided into nine 3×3 boxes with heavier lines, so you always know which box a given cell belongs to.
+
+### The Palette
+
+The composition uses a small, consistent palette that recalls the aesthetic of vintage puzzle books:
+
+| Element             | Colour        | Meaning                                     |
+|---------------------|---------------|---------------------------------------------|
+| Background          | `#141852`     | Deep midnight blue                          |
+| Empty cells         | `#282878`     | Slightly lighter blue                       |
+| Box lines           | `#FFFFFF`     | Bright white, bold 3×3 grid                 |
+| Locked numbers      | `#FFFFFF`     | White, for the original clues               |
+| Player-entered      | `#F0F0FF`     | Near-white, for correct entries             |
+| Invalid entries     | `#FF3C3C`     | Bright red, for mistakes                    |
+| Row/col highlight   | cyan overlay  | `rgba(60, 180, 200, 0.4)`                   |
+| Number highlight    | yellow overlay| `rgba(255, 255, 100, 0.4)`                  |
+| Selected number box | `#FFA500`     | Orange                                      |
+| Unselected box      | `#4682B4`     | Steel blue                                  |
+
+The result is a composition that reads as both a puzzle and a piece of quiet, ornamental computation.
+
+### The Surfaces
+
+The same seed is rendered across four surface formats. These are static frames — they represent the initial, print-ready puzzle.
+
+| Surface  | Aspect | Material          |
+|----------|--------|-------------------|
+| Print    | 1 : 1  | Cotton rag        |
+| Scarf    | 3 : 1  | Twill silk        |
+| Textile  | 4 : 3  | Fabric yardage    |
+| Wall     | 2 : 3  | Wallpaper         |
+
+Each surface uses the same underlying seed and structural logic — only the repeat, orientation, and scale change.
+
+### A Note on Stillness
+
+Unlike the rest of the still volumes, Enigma Sudoku has both a **live** plate and **static** surfaces. The plate is playable. The surfaces, framed plate, cover, and archive thumbnails are all rendered as snapshots of the initial puzzle — they do not respond to clicks, and they always show the same playable board.
+
+This is a deliberate design choice. The live plate is where you play; the static surfaces are what you print. If the surfaces reflected your current game state, they would be different every time — and a printed scarf is not a moving target.
+
+---
+
+## Usage
+
+### In the browser
+
+1. Open `index.html` in any modern browser.
+2. Click **New Game** to generate a new puzzle.
+3. **Click a cell** on the plate to select it.
+4. **Click a number button** (the row below the grid) or press **1–9** to fill it.
+5. **Click Download** to save the current puzzle as a PNG.
+6. Scroll to the **Archive** section and click any plate to load it into Plate 001.
+
+### Keyboard shortcuts
+
+| Key     | Action                     |
+|---------|----------------------------|
+| `R`     | New puzzle                 |
+| `S`     | Save as PNG                |
+| `1`–`9` | Select number 1 through 9  |
+
+### Reproducing a puzzle
+
+Each puzzle is identified by an 8-digit seed label displayed in the metadata panel. To reproduce a specific puzzle, note the seed and regenerate it programmatically:
+
+```js
+const rng = new RandomGenerator(seed);
+const features = buildFeatures(rng);
+features.puzzle.draw(canvas.getContext('2d'), canvas.width, canvas.height);
+```
+
+Because the generator is deterministic, this will produce the identical puzzle on any device.
+
+---
+
+## Technical Notes
+
+- **No build step.** The system is a single HTML file with inline CSS and JavaScript.
+- **No dependencies.** All drawing is done with the native Canvas 2D API. `roundRect` is polyfilled for older browsers.
+- **Deterministic.** The `RandomGenerator` class uses a xorshift-based PRNG seeded by an integer, so identical seeds produce identical puzzles.
+- **Feature isolation.** Cover, framed plate, surfaces, and archive thumbnails each derive their own puzzle from their own local `RandomGenerator`. This means they never reflect the current state of your live plate — they always show the initial, print-ready puzzle.
+- **Interactive plate only.** Click and touch handlers are attached to the plate canvas only. The framed plate, surfaces, and archive thumbnails are non-interactive.
+- **Bounded recursion.** The backtracking algorithm has a bounded depth (81 cells) and terminates cleanly.
+- **Grid geometry.** The grid is sized by a golden ratio (`1 / 1.618`) so the puzzle always occupies a visually balanced portion of the canvas.
+- **Responsive.** The layout adapts from large desktop down to very small mobile devices (tested at 360px viewport width).
+- **Accessible.** Supports `prefers-reduced-motion`. Pinch-zoom is enabled.
+
+### Browser support
+
+Tested in current versions of:
+
+- Chrome / Edge
+- Firefox
+- Safari (desktop and iOS)
+
+---
+
+## Licensing
+
+All Enigma Sudoku puzzles are **seed-documented** and available for licensing across textile, surface, and print applications.
+
+- **Standard licenses** cover single-product production runs.
+- **Commercial use, custom editions, or exclusive rights** are available on request.
+
+Each license is issued against a specific seed ID. Regeneration of the same seed produces the identical puzzle — ensuring reproducibility between artist, studio, and manufacturer.
+
+For licensing enquiries: [reyhanehdaneshdoost@gmail.com](mailto:reyhanehdaneshdoost@gmail.com)
+
+---
+
+## Commission
+
+Enigma Sudoku is a generative design system, not a fixed artwork. It can be adapted for specific briefs:
+
+| Service     | Description                                                       |
+|-------------|-------------------------------------------------------------------|
+| Licensing   | Existing seeds from the archive, licensed for production use      |
+| Commission  | New compositions designed to your palette, repeat, and product    |
+| Systems     | A private generative tool built for your studio's ongoing use     |
+
+To begin a conversation: [reyhanehdaneshdoost@gmail.com](mailto:reyhanehdaneshdoost@gmail.com)
+
+---
+
+## Series
+
+Enigma Sudoku is part of a computational textile series. Each volume approaches ornament from a different structural angle:
+
+| Volume                     | Structure                    | Motion                     |
+|----------------------------|------------------------------|----------------------------|
+| Girih 1                    | Islamic geometric            | Static                     |
+| Arachne                    | Rotating rings               | Static                     |
+| Baroque Me Baby            | Baroque frames               | Static                     |
+| Bezier 1                   | Concentric curves            | Static                     |
+| Bezier 2                   | Single rotating curve        | Animated (plate)           |
+| Brownian Graphe            | Graph networks               | Animated + interactive     |
+| Celestial Grove            | Recursive branch trees       | Static                     |
+| ChaotiColor                | Cellular automata            | Static                     |
+| Citrus Mosaic              | Arc-and-triangle tiles       | Static                     |
+| Crazy Knight Curve         | Knight's-tour smooth path    | Static                     |
+| Crazy Knight Line          | Knight's-tour gradient       | Static                     |
+| Crazy Letter               | Framed wavy lines            | Static                     |
+| cyPollock                  | Scattered branch field       | Static                     |
+| Digital Pollen             | Noise-driven texture         | Static                     |
+| Draconic Fractals          | Tiled dragon curve           | Static                     |
+| Dreamscape Watercolors     | Layered watercolor blooms    | Static                     |
+| Elliott Waves              | Financial chart              | Static                     |
+| Ellipses                   | Concentric elliptical rings  | Static                     |
+| **Enigma Sudoku**          | **Playable 9×9 puzzle**      | **Interactive (plate)**    |
+
+The series is designed as a coherent whole — same page structure, same seed logic, same licensing and commission terms — so that each volume can be presented individually or as part of a larger body of work.
+
+---
+
+## Credits
+
+- **Design & Generative System** — Reyhaneh Daneshdoost
+- **Typefaces** — Cormorant Garamond · DM Mono
+- **Platform** — Reyrove Studio
+- **Edition** — Enigma Sudoku, Autumn 2026
+
+### On AI tools
+
+Where technical obstacles were encountered, AI tools were used for debugging and code optimization. Every structural, aesthetic, and conceptual decision remained the artist's own.
+
+---
+
+## Links
+
+- Website — [reyrove.github.io](https://reyrove.github.io/)
+- Instagram — [@rey._.rove](https://www.instagram.com/rey._.rove/)
+- LinkedIn — [Reyhaneh Daneshdoost](https://www.linkedin.com/in/reyhaneh-daneshdoost-730481160/)
+- X — [@reyrove](https://x.com/reyrove)
+
+---
+
+© Enigma Sudoku · All compositions reproducible by seed · Computational Textile Design
